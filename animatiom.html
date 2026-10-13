@@ -1,0 +1,182 @@
+<html>
+<head>
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: Blue;
+    font-family: Times New Roman;
+    margin: 0;
+}
+
+/* Banner */
+#banner {
+    background-color: blue;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Details */
+#details {
+    display: flex;
+    gap: 30px;
+    margin: 30px;
+}
+
+/* Event Details */
+#event-details {
+    border: 3px solid black;
+    background-color: lightblue;
+    padding: 20px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+/* Registration Details */
+#registration-events {
+    border: 3px solid black;
+    background-color: lightpink;
+    padding: 20px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    color: darkblue;
+}
+
+/* Submit Button */
+button {
+    padding: 12px 25px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    animation: desk 2s infinite alternate;
+    transition: background-color 0.5s;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+/* Desktop Animation */
+@keyframes desk {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* Small / Minimized Window */
+@media screen and (max-width: 600px) {
+
+    body {
+        background-color: lavender;
+    }
+
+    #banner {
+        background-color: purple;
+    }
+
+    #details {
+        flex-direction: column;
+        margin: 15px;
+    }
+
+    #event-details {
+        background-color: lightgreen;
+        width: 100%;
+    }
+
+    #registration-events {
+        background-color: lightyellow;
+        width: 100%;
+    }
+
+    button {
+        background-color: green;
+        animation: mob 1s infinite alternate;
+    }
+}
+
+/* Mobile Animation */
+@keyframes mob {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.15);
+    }
+}
+
+/* Large / Maximized Window */
+@media screen and (min-width: 601px) {
+
+    body {
+        background-color: lightyellow;
+    }
+
+    #banner {
+        background-color: blue;
+    }
+
+    #event-details {
+        background-color: lightblue;
+    }
+
+    #registration-events {
+        background-color: lightpink;
+    }
+
+    button {
+        background-color: green;
+        animation: desk 2s infinite alternate;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="banner">
+    <h1>STC | Pollachi</h1>
+    <h2>TARANG</h2>
+    <p>It is an inter-college meet fest, happening on 09-10-2026</p>
+</div>
+
+<div id="details">
+
+    <div id="event-details">
+        <h1>Event Details</h1>
+        <h3>Quiz</h3>
+        <h3>Connection</h3>
+        <h3>Dancing</h3>
+    </div>
+
+    <div id="registration-events">
+        <h1>Registration Details</h1>
+        <h3>Registration fee is 150. Registration ends on 08-10-2026.</h3>
+    </div>
+
+</div>
+
+<button>Submit</button>
+
+</body>
+</html>
