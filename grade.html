@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+</head>
+<body>
+    <center>
+    <h1>Grade Calculator</h1>
+    <input type="number" placeholder="Enter mark" name="mark" id="mark" required><br><br>
+    <input type="number" placeholder="Enter mark" name="mark" id="mark" required><br><br>
+    <input type="number" placeholder="Enter mark" name="mark" id="mark" required><br><br>
+    <input type="number" placeholder="Enter mark" name="mark" id="mark" required><br><br>
+    <input type="number" placeholder="Enter mark" name="mark" id="mark" required><br><br>
+    <center>
+
+    <button onclick="grade()">Result</button>
+</body>
+
+<script>
+    function grade(){
+        var mark1 = Number(document.getElementById("mark").value);
+        var mark2 = Number(document.getElementById("mark").value);
+        var mark3 = Number(document.getElementById("mark").value);
+        var mark4 = Number(document.getElementById("mark").value);
+        var mark5 = Number(document.getElementById("mark").value);
+
+        var total = mark1 + mark2 + mark3 + mark4 + mark5;
+        var average = total / 5;
+
+        if(average >= 90){
+            alert("Grade: A Total Marks: " + total + " Average: " + average);
+        } else if(average >= 80){
+            alert("Grade: B Total Marks: " + total + " Average: " + average);
+        } else if(average >= 70){
+            alert("Grade: C Total Marks: " + total + " Average: " + average);
+        } else if(average >= 60){
+            alert("Grade: D Total Marks: " + total + " Average: " + average);   
+        } else {
+            alert("Grade: F Total Marks: " + total + " Average: " + average);
+        }
+    }
+</script>
+
+</html>
