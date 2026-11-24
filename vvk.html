@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Welcome
+</title>
+</head>
+<body><center><h1>To Do List</h1>
+    <input type="text" id="input"><br>
+<button onclick="create()" >create</button><br></center>
+<h1>Task List</h1>
+<div id = "list">
+</div>
+<script>
+function create(){
+let task=document.getElementById("input").value;
+
+if(task=="")
+{
+	alert("enterr the task");
+	return;
+}
+document.getElementById("list").innerHTML+="<div><h3>"+task+"</h3><button>delete</button><button>complete</button></div>";
+let ajay=document.createElement("h1");
+ajay.textcontent="welcome to ajay house";
+
+document.getElementById("list").appendchild(ajay);
+}
+</script>
+</body>
+</html>
