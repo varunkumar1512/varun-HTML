@@ -1,0 +1,125 @@
+<html>
+<head>
+    <title>Student Result Portal</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #e6f2ff;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: white;
+            width: 350px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px gray;
+        }
+
+        input, button {
+            width: 90%;          
+            padding: 12px;
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: darkgreen;
+        }
+
+        #result {
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Student Result Portal</h2>
+
+    <input type="text" id="regno" placeholder="Registration Number">
+
+    <input type="date" id="dob">
+
+    <button onclick="checkResult()">Check Result</button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+let data = {
+    s1: {
+        regno: "101",
+        dob: "2005-01-10",
+        name: "Priya",
+        marks: 450
+    },
+
+    s2: {
+        regno: "102",
+        dob: "2004-05-15",
+        name: "Barani",
+        marks: 420
+    },
+
+    s3: {
+        regno: "103",
+        dob: "2005-08-20",
+        name: "Divya",
+        marks: 460
+    },
+
+    s4: {
+        regno: "104",
+        dob: "2004-11-25",
+        name: "Kaviya",
+        marks: 400
+    },
+
+    s5: {
+        regno: "105",
+        dob: "2005-03-12",
+        name: "Nila",
+        marks: 480
+    }
+};
+
+function checkResult() {
+    let regno = document.getElementById("regno").value;
+    let dob = document.getElementById("dob").value;
+
+    let student = Object.values(data).find(function(s) {
+        return s.regno === regno && s.dob === dob;
+    });
+
+    if (student) {
+        document.getElementById("result").innerHTML =
+            "<h3>Result Details</h3>" +
+            "Name: " + student.name + "<br>" +
+            "Registration Number: " + student.regno + "<br>" +
+            "Date of Birth: " + student.dob + "<br>" +
+            "Total Marks: " + student.marks + "/500";
+    } else {
+        document.getElementById("result").innerHTML =
+            "Invalid Registration Number or DOB!";
+    }
+}
+</script>
+
+</body>
+</html>
